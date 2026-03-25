@@ -1,0 +1,92 @@
+body{
+background:#020617;
+color:white;
+font-family:sans-serif;
+margin:0;
+}
+
+nav{
+display:flex;
+justify-content:space-between;
+padding:20px;
+background:#111;
+}
+
+.hero{
+text-align:center;
+padding:100px;
+}
+#earth3d {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+#earth3d canvas {
+  border-radius: 50%;
+}
+#earth3d {
+  cursor: grab;
+}
+.section{
+padding:50px;
+text-align:center;
+}
+
+.card{
+background:#111;
+padding:20px;
+border-radius:10px;
+width:300px;
+margin:auto;
+}
+
+input{
+display:block;
+margin:10px auto;
+padding:10px;
+}
+
+#mapBox{
+height:400px;
+margin-top:20px;
+}
+
+/* 🌍 3D EARTH */
+.earth {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: url('https://i.imgur.com/2RXYaYF.jpg');
+  background-size: cover;
+  animation: rotateEarth 20s linear infinite;
+  box-shadow: 0 0 60px rgba(0, 255, 255, 0.5);
+}
+
+/* Rotation */
+@keyframes rotateEarth {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 1000px 0;
+  }
+}
+
+.hidden-section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+body::before {
+  content: "";
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, rgba(0,255,255,0.1), transparent);
+  z-index: -1;
+}
